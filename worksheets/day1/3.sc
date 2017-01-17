@@ -40,4 +40,4 @@ def map5(xs: List[Int], f: Int => Int): List[Int] = {
 }
 
 map5((1 to 100000).toList, x => x * x)
-'map5(List(1, 2, 3, 4), x => x + 10)'
+map5(List(1, 2, 3, 4), x => x + 10)
