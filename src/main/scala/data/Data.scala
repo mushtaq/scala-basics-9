@@ -1,6 +1,7 @@
 package data
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OFormat}
+import sort.Ord
 
 
 case class Address(street: String, pin: Int)
@@ -23,7 +24,8 @@ case class Book(
   )
 
 object Book {
-
+  implicit val bookOrd: Ord[Book] = (a, b) => a.basePrice < b.basePrice
+  implicit val format: OFormat[Book] = Json.format
 }
 
 object Data {
